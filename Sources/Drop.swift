@@ -36,6 +36,7 @@ public struct Drop: ExpressibleByStringLiteral {
   ///   - subtitleNumberOfLines: Maximum number of lines that `subtitle` can occupy. Defaults to `1`.
   ///   A value of 0 means no limit.
   ///   - icon: Optional icon.
+  ///   - backgroundColor: Alternative background color.
   ///   - action: Optional action.
   ///   - position: Position. Defaults to `Drop.Position.top`.
   ///   - duration: Duration. Defaults to `Drop.Duration.recommended`.
@@ -46,6 +47,7 @@ public struct Drop: ExpressibleByStringLiteral {
     subtitle: String? = nil,
     subtitleNumberOfLines: Int = 1,
     icon: UIImage? = nil,
+    backgroundColor: UIColor? = nil,
     action: Action? = nil,
     position: Position = .top,
     duration: Duration = .recommended,
@@ -57,6 +59,7 @@ public struct Drop: ExpressibleByStringLiteral {
       self.subtitle = subtitle
     }
     self.subtitleNumberOfLines = subtitleNumberOfLines
+    self.backgroundColor = backgroundColor
     self.icon = icon
     self.action = action
     self.position = position
@@ -90,6 +93,9 @@ public struct Drop: ExpressibleByStringLiteral {
 
   /// Icon.
   public var icon: UIImage?
+    
+  /// Background Color.
+  public var backgroundColor: UIColor?
 
   /// Action.
   public var action: Action?
